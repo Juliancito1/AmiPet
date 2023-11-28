@@ -10,10 +10,10 @@ const Menu = () => {
         <Navbar.Brand href="#home"><img src={LogoAmiPet} className='logo'></img></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#link">Sobre Nosotros</Nav.Link>
-            <Nav.Link href="#link">Iniciar Sesion</Nav.Link>
+          <Nav className="ms-auto text-center">
+            <Nav.Link href="#home" className='fs-4 boton-nav'>Inicio</Nav.Link>
+            <Nav.Link href="#link" className='fs-4 boton-nav mx-lg-1'>Sobre Nosotros</Nav.Link>
+            <Nav.Link href="#link" className='fs-4 boton-nav'>Iniciar Sesion</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

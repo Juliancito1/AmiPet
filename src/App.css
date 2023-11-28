@@ -17,3 +17,9 @@
 .Navbar{
     background-color: #7FF0EB;
 }
+
+.Navbar .boton-nav:hover{
+  transition-duration: 0.5s;
+  background-color: #1B3C4F ;  
+  color: white ;
+}
