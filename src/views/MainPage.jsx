@@ -1,6 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import imagen1 from '../assets/Imagen-carrousel1.png'
 import imagen2 from '../assets/Imagen-carrousel2.png'
+import Info from './Info';
 const MainPage = () => {
     return (
         <section className="mainSection">
@@ -16,6 +17,7 @@ const MainPage = () => {
         <img className='w-100 img-carousel' src={imagen2} alt="" />
       </Carousel.Item>
     </Carousel>
+    <Info></Info>
         </section>
     );
 };

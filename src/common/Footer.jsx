@@ -1,5 +1,6 @@
 import { Row, Col, Container } from "react-bootstrap";
 import LogoAmiPet from '../assets/AmiPet-logo.png'
+import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <footer className="Navbar py-4">
@@ -13,8 +14,8 @@ const Footer = () => {
                     </Col>
                     <Col md={4} className="text-center text-md-end">
                         <ul className="list-unstyled">
-                        <li className="mt-lg-4">Inicio</li>
-                        <li className="mt-lg-4">Sobre Nosotros</li>
+                        <li><Link to="/" className="footer-link text-decoration-none fs-4 text-dark">Inicio</Link></li>
+                        <li><Link to="/SobreNosotros" className="footer-link text-decoration-none fs-4 text-dark">Sobre Nosotros</Link></li>
                         </ul>
                     </Col>
                 </Row>
