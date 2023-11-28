@@ -1,3 +1,14 @@
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+.mainSection{
+    flex-grow: 1;
+    overflow: hidden;
+  }
+
 .logo{
     height: 80px;
     object-fit: cover;
