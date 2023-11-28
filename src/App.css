@@ -23,3 +23,8 @@
   background-color: #1B3C4F ;  
   color: white ;
 }
+
+.img-carousel{
+  height: 550px;
+  object-fit: cover;
+}
