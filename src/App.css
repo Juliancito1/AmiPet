@@ -33,3 +33,11 @@ footer .boton-nav:hover{
   height: 550px;
   object-fit: cover;
 }
+
+.fondo1{
+  background-color: #FBD7BA;
+}
+
+.fondo2{
+  background-color: #bff5f7;
+}
