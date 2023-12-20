@@ -1,17 +1,48 @@
 import { Form, Button, NavLink } from "react-bootstrap";
-
+import { useForm } from "react-hook-form";
 
 const FormLogin = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm();
+
+      const onSubmit = () => {
+        console.log('Submit')
+      }
     return (
-        <Form>
+        <Form onSubmit={handleSubmit(onSubmit)}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email</Form.Label>
-        <Form.Control type="email" placeholder="Ingrese su email" />
+        <Form.Control type="email" placeholder="Ingrese su email" {
+            ...register('email',{
+                required: 'El email es obligatorio',
+                pattern:{
+                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                    message: 'El email debe contener @ y terminar . com/es/com.ar u otra terminacion'
+                }
+            })
+        } />
+        <Form.Text className="text-danger">
+                {errors.email?.message}
+              </Form.Text>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Contraseña</Form.Label>
-        <Form.Control type="password" placeholder="Ingrese su contraseña" />
-        <Form.Text className="text-muted">
+        <Form.Control type="password" placeholder="Ingrese su contraseña" {
+                ...register('password',{
+                  required: 'La contraseña es obligatoria',
+                  pattern:{
+                    value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
+                    message: 'El password debe contener 8 caracteres (al menos 1 letra mayúscula, 1 letra minúscula y 1 numero) también puede incluir carácteres especiales'
+                  }
+                })
+              } />
+              <Form.Text className="text-danger">
+                {errors.password?.message}
+              </Form.Text>
+        <Form.Text className="text-muted d-block">
           Nunca comparta su email y contrasea con nadie.
         </Form.Text>
       </Form.Group>
