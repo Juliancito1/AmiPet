@@ -1,5 +1,7 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import FormRegister from "./FormRegister";
+import { Link } from "react-router-dom";
 
 const FormLogin = ({setShow}) => {
     const {
@@ -52,7 +54,7 @@ const FormLogin = ({setShow}) => {
             Has olvidado tu contraseña? <Button variant="outline-primary" className="border-0" size="sm">Haz Click Aqui</Button>
         </Form.Text>
         <Form.Text className="fs-6">
-            No tienes una cuenta? <Button variant="outline-primary" className="border-0" size="sm">Registrarse</Button>
+            No tienes una cuenta? <Link className="btn btn-sm btn-outline-primary border-0 text-decoration-none" size="sm" to={'/Registrarse'} onClick={() => setShow(false)}>Registrarse</Link>
         </Form.Text>
       </section>
       <div className="text-end">

@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Container } from "react-bootstrap";
 const FormRegister = () => {
     const {
         register,
@@ -12,6 +12,8 @@ const FormRegister = () => {
       }
  
     return (
+      <Container className="mainSection">
+
         <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Nombre de Usuario</Form.Label>
@@ -27,7 +29,7 @@ const FormRegister = () => {
                     message: 'El nombre de usuario no puede tener más de 50 caracteres',
                   },
                 })}
-              />
+                />
               <Form.Text className="text-danger">{errors.nombreUsuario?.message}</Form.Text>
             </Form.Group>
 
@@ -44,7 +46,7 @@ const FormRegister = () => {
                     message: 'El email debe contener @ y terminar en .com, .es, .com.ar u otra terminación',
                   },
                 })}
-              />
+                />
               <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
             </Form.Group>
 
@@ -62,13 +64,14 @@ const FormRegister = () => {
                     message: 'La contraseña debe contener 8 caracteres (al menos 1 letra mayúscula, 1 letra minúscula y 1 número) y puede incluir caracteres especiales',
                   },
                 })}
-              />
+                />
               <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
             </Form.Group>
             <Button variant="primary" type="submit">
               Registrar
             </Button>
           </Form>
+        </Container>
     );
 };
 
