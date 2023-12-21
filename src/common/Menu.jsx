@@ -30,7 +30,7 @@ const Menu = () => {
           <Modal.Title>Iniciar Sesion</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <FormLogin></FormLogin>
+          <FormLogin setShow={setShow}></FormLogin>
         </Modal.Body>
       </Modal>
     </Navbar>

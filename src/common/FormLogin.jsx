@@ -1,7 +1,7 @@
 import { Form, Button, NavLink } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
-const FormLogin = () => {
+const FormLogin = ({setShow}) => {
     const {
         register,
         handleSubmit,
@@ -10,6 +10,7 @@ const FormLogin = () => {
 
       const onSubmit = () => {
         console.log('Submit')
+        setShow(false)
       }
     return (
         <Form onSubmit={handleSubmit(onSubmit)}>
