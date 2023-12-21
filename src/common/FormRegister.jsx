@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Form, Button, Container } from "react-bootstrap";
+import { Form, Button, Container, Card } from "react-bootstrap";
 const FormRegister = () => {
     const {
         register,
@@ -12,8 +12,11 @@ const FormRegister = () => {
       }
  
     return (
-      <Container className="mainSection my-5">
-        <h2 className="display-1 text-center">Registrarse</h2>
+      <section className="mainSection py-5" id="fondoRegistro">
+      <Container>
+        <Card id="contenedorRegistro">
+        <Card.Header className="display-1 text-center">Registrarse</Card.Header>
+        <Card.Body>
         <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Nombre de Usuario</Form.Label>
@@ -21,13 +24,22 @@ const FormRegister = () => {
                 type="text"
                 name="nombreUsuario"
                 placeholder="Ingrese su nombre de usuario"
+                minLength={5}
                 maxLength={50}
                 {...register('nombreUsuario', {
                   required: 'El nombre de usuario es obligatorio',
+                  minLength:{
+                    value: 5,
+                    message: "El nombre de usuario debe contener al menos 5 caracteres"
+                  },
                   maxLength: {
                     value: 50,
                     message: 'El nombre de usuario no puede tener más de 50 caracteres',
                   },
+                  pattern:{
+                    value: /^[a-zA-Z][a-zA-Z0-9]{4,49}$/,
+                    message: "Ingrese un usuario válido debe contener solo letras y números"
+                  }
                 })}
                 />
               <Form.Text className="text-danger">{errors.nombreUsuario?.message}</Form.Text>
@@ -125,10 +137,13 @@ const FormRegister = () => {
               <Form.Text className="text-danger">{errors.localidad?.message}</Form.Text>
             </Form.Group>
             <Button variant="primary" type="submit">
-              Registrar
+              Registrarte
             </Button>
           </Form>
+          </Card.Body>
+          </Card>
         </Container>
+        </section>
     );
 };
 

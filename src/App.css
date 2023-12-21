@@ -41,3 +41,21 @@ footer .boton-nav:hover{
 .fondo2{
   background-color: #bff5f7;
 }
+
+@media (min-width: 360px)
+{
+  #contenedorRegistro{
+    background-color: #bff5f7;
+  }
+}
+
+@media (min-width: 992px){
+#fondoRegistro{
+  background-image: url(./assets/Imagen-carrousel1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+#contenedorRegistro{
+  background-color: #bff5f794;
+}
+}
