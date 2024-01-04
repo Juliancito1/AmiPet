@@ -47,6 +47,15 @@ footer .boton-nav:hover{
   #contenedorRegistro{
     background-color: #bff5f7;
   }
+  .principal{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    padding-bottom: 360px;
+  }
+  .textoprincipal{
+    background-color: rgba(255, 255, 255, 0.473);
+  }
 }
 
 @media (min-width: 992px){
@@ -59,14 +68,13 @@ footer .boton-nav:hover{
   background-color: #bff5f794;
 }
 .principal{
-  background-image: url(./assets/Fondo-Principal.gif);
   background-repeat: no-repeat;
   background-size: cover;
   height: 900px;
   object-fit: cover;
 }
 .textoprincipal{
-  background-color: rgba(255, 255, 255, 0.336);
+  background-color: rgba(255, 255, 255, 0.473);
   margin-top: 300px;
 }
 }
