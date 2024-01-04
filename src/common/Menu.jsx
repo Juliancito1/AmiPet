@@ -3,8 +3,15 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link, NavLink} from 'react-router-dom'
 import LogoAmiPet from '../assets/AmiPet-logo.png'
+import { Button, Modal } from 'react-bootstrap';
+import { useState } from 'react';
+import FormLogin from './FormLogin';
 
 const Menu = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const  handleShow = () => setShow(true);
     return (
         <Navbar expand="lg" className="Navbar">
       <Container>
@@ -14,10 +21,18 @@ const Menu = () => {
           <Nav className="ms-auto text-center">
             <NavLink end className='fs-4 nav-item nav-link' id='boton-nav' to={'/'}>Inicio</NavLink>
             <NavLink end className='fs-4 nav-item nav-link mx-lg-1' id='boton-nav' to={'/SobreNosotros'}>Sobre Nosotros</NavLink>
-            <NavLink end className='fs-4 nav-item nav-link' id='boton-nav' to={'/login'}>Iniciar Sesion</NavLink>
+            <NavLink end className='fs-4 nav-item nav-link' id='boton-nav' onClick={handleShow}>Iniciar Sesion</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Iniciar Sesion</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <FormLogin setShow={setShow}></FormLogin>
+        </Modal.Body>
+      </Modal>
     </Navbar>
     );
 };
