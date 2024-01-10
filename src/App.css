@@ -78,3 +78,8 @@ footer .boton-nav:hover{
   margin-top: 300px;
 }
 }
+
+.Foto{
+ height: 200px;
+ object-fit: cover;
+}

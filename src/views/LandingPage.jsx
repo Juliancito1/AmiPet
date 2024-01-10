@@ -1,5 +1,7 @@
 import {Container, Button, Card, Row, Col} from 'react-bootstrap'
+import { MOCK_PUBLICACIONES } from '../helpers/ListaPublicaciones';
 import imgPrincipal from '../assets/Fondo-Principal.gif'
+import ListaAdopcion from './ListaAdopcion';
 const LandingPage = () => {
     return (
         <section className="mainSection">
@@ -11,50 +13,22 @@ const LandingPage = () => {
             </section>
             <Container className='mt-3'>
                 <h2>Adopción de Mascotas</h2>
+                <Button>Añadir publicación de adopción</Button>
                 <hr />
                 <section>
                     <Row>
-                        <Col md={4} className='mb-3'>
-                            <Card>
-                                <Card.Header>Pepito</Card.Header>
-                                <Card.Body>Perrito foto</Card.Body>
-                                <Card.Footer>Adoptar</Card.Footer>
-                            </Card>
-                        </Col>
-                        <Col md={4}>
-                            <Card>
-                                <Card.Header>Pepito</Card.Header>
-                                <Card.Body>Perrito foto</Card.Body>
-                                <Card.Footer>Adoptar</Card.Footer>
-                            </Card>
-                        </Col>
-                        <Col md={4}>
-                            <Card>
-                                <Card.Header>Pepito</Card.Header>
-                                <Card.Body>Perrito foto</Card.Body>
-                                <Card.Footer>Adoptar</Card.Footer>
-                            </Card>
-                        </Col>
-                        <Col md={4}>
-                            <Card>
-                                <Card.Header>Pepito</Card.Header>
-                                <Card.Body>Perrito foto</Card.Body>
-                                <Card.Footer>Adoptar</Card.Footer>
-                            </Card>
-                        </Col>
+                        {
+                            MOCK_PUBLICACIONES.map((adopcion) => {
+                                return <ListaAdopcion adopcion={adopcion} key={adopcion.id}></ListaAdopcion>
+                            })
+                        }
                     </Row>
                 </section>
                 <h2 className='mt-3'>Mascotas Desaparecidas</h2>
+                <Button>Añadir publicación de desaparación</Button>
                 <hr />
                 <section className='mb-4'>
                     <Row>
-                        <Col md={4} className='mb-3'>
-                            <Card>
-                                <Card.Header>Pepito</Card.Header>
-                                <Card.Body>Perrito foto</Card.Body>
-                                <Card.Footer>Adoptar</Card.Footer>
-                            </Card>
-                        </Col>
                         <Col md={4}>
                             <Card>
                                 <Card.Header>Pepito</Card.Header>
