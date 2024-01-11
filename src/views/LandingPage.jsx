@@ -1,7 +1,8 @@
 import {Container, Button, Card, Row, Col} from 'react-bootstrap'
-import { MOCK_PUBLICACIONES } from '../helpers/ListaPublicaciones';
+import { MOCK_PUBLICACIONES, MOCK_PUBLICACIONES_2 } from '../helpers/ListaPublicaciones';
 import imgPrincipal from '../assets/Fondo-Principal.gif'
 import ListaAdopcion from './ListaAdopcion';
+import ListaMascotaPerdida from './ListaMascotaPerdida';
 const LandingPage = () => {
     return (
         <section className="mainSection">
@@ -29,27 +30,11 @@ const LandingPage = () => {
                 <hr />
                 <section className='mb-4'>
                     <Row>
-                        <Col md={4}>
-                            <Card>
-                                <Card.Header>Pepito</Card.Header>
-                                <Card.Body>Perrito foto</Card.Body>
-                                <Card.Footer>Adoptar</Card.Footer>
-                            </Card>
-                        </Col>
-                        <Col md={4}>
-                            <Card>
-                                <Card.Header>Pepito</Card.Header>
-                                <Card.Body>Perrito foto</Card.Body>
-                                <Card.Footer>Adoptar</Card.Footer>
-                            </Card>
-                        </Col>
-                        <Col md={4}>
-                            <Card>
-                                <Card.Header>Pepito</Card.Header>
-                                <Card.Body>Perrito foto</Card.Body>
-                                <Card.Footer>Adoptar</Card.Footer>
-                            </Card>
-                        </Col>
+                        {
+                            MOCK_PUBLICACIONES_2.map((mascota) => {
+                                return <ListaMascotaPerdida mascota={mascota} key={mascota.id}></ListaMascotaPerdida>
+                            })
+                        }
                     </Row>
                 </section>
             </Container>
