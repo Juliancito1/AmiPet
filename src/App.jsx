@@ -5,6 +5,7 @@ import Menu from './common/Menu'
 import MainPage from './views/MainPage'
 import SobreNosotros from './views/SobreNosotros'
 import FormRegister from './common/FormRegister'
+import LandingPage from './views/LandingPage'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Route exact path="/" element={<MainPage></MainPage>}></Route>
       <Route exact path="/SobreNosotros" element={<SobreNosotros></SobreNosotros>}></Route>
       <Route exact path="/Registrarse" element={<FormRegister></FormRegister>}></Route>
+      <Route exact path="/Principal" element={<LandingPage></LandingPage>}></Route>
     </Routes>
      <Footer></Footer>
     </BrowserRouter>
