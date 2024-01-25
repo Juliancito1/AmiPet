@@ -56,6 +56,10 @@ footer .boton-nav:hover{
   .textoprincipal{
     background-color: rgba(255, 255, 255, 0.473);
   }
+  .imagenDetalle{
+    height: 150px;
+    object-fit: cover;
+  }
 }
 
 @media (min-width: 992px){
@@ -76,6 +80,10 @@ footer .boton-nav:hover{
 .textoprincipal{
   background-color: rgba(255, 255, 255, 0.473);
   margin-top: 300px;
+}
+.imagenDetalle{
+  height: 300px;
+  object-fit: cover;
 }
 }
 
