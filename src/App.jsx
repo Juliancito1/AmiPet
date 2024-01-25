@@ -7,12 +7,16 @@ import SobreNosotros from './views/SobreNosotros'
 import FormRegister from './common/FormRegister'
 import LandingPage from './views/LandingPage'
 import Detail from './views/Detail'
+import { useState } from 'react'
 
 function App() {
 
+  const usuarioStorage = JSON.parse(sessionStorage.getItem('usuario')) || {}
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuarioStorage);
+
   return (
     <BrowserRouter>
-     <Menu></Menu>
+     <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
     <Routes>
       <Route exact path="/" element={<MainPage></MainPage>}></Route>
       <Route exact path="/SobreNosotros" element={<SobreNosotros></SobreNosotros>}></Route>

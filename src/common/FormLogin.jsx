@@ -1,21 +1,25 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Login } from "../helpers/Login";
 
-const FormLogin = ({setShow}) => {
+const FormLogin = ({setShow, setUsuarioLogueado}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  
+
+  const navegacion = useNavigate();
+
   const onSubmit = (usuario) => {
       console.log('Submit')
       Login(usuario).then((respuesta)=>{
         if(respuesta){
           sessionStorage.setItem("usuario",JSON.stringify(respuesta));
+          setUsuarioLogueado({...respuesta})
           setShow(false)
+          navegacion("/Principal")
         }
       })
       }
