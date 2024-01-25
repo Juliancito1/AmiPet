@@ -10,10 +10,14 @@ const FormLogin = ({setShow}) => {
     formState: { errors },
   } = useForm();
   
-  const onSubmit = () => {
+  const onSubmit = (usuario) => {
       console.log('Submit')
-      Login()
-        setShow(false)
+      Login(usuario).then((respuesta)=>{
+        if(respuesta){
+          sessionStorage.setItem("usuario",JSON.stringify(respuesta));
+          setShow(false)
+        }
+      })
       }
     return (
         <Form onSubmit={handleSubmit(onSubmit)}>
