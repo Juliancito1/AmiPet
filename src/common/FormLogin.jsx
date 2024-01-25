@@ -1,17 +1,18 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import FormRegister from "./FormRegister";
 import { Link } from "react-router-dom";
+import { Login } from "../helpers/Login";
 
 const FormLogin = ({setShow}) => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-      } = useForm();
-
-      const onSubmit = () => {
-        console.log('Submit')
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  
+  const onSubmit = () => {
+      console.log('Submit')
+      Login()
         setShow(false)
       }
     return (

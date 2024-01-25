@@ -1,0 +1,22 @@
+{
+    "usuarios":[
+        {
+            "id":1,
+            "nombreUsuario": "Pepe",
+            "email":"pepe@gmail.com",
+            "password":"PepeGzn1!",
+            "pais":"Argentina",
+            "provincia":"Buenos Aires",
+            "localidad":"Capital"
+        },
+        {
+            "id":2,
+            "nombreUsuario": "Jorge",
+            "email":"jorge@gmail.com",
+            "password":"PepeGzn1!",
+            "pais":"Argentina",
+            "provincia":"Buenos Aires",
+            "localidad":"Capital"
+        }
+    ]
+}
