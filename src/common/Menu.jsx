@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {Link, NavLink} from 'react-router-dom'
+import {Link, NavLink, useNavigate} from 'react-router-dom'
 import LogoAmiPet from '../assets/AmiPet-logo.png'
 import { Button, Modal } from 'react-bootstrap';
 import { useState } from 'react';
@@ -10,8 +10,13 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { IoNotifications } from "react-icons/io5";
 
 const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
+  const navegar = useNavigate()
   const [show, setShow] = useState(false);
-
+  const logout = () => {
+    sessionStorage.removeItem("usuario")
+    setUsuarioLogueado({})
+    navegar("/")
+  }
   const handleClose = () => setShow(false);
   const  handleShow = () => setShow(true);
     return (
@@ -37,6 +42,7 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
               <>
                 <NavLink className="fs-4 nav-item nav-link"><FaRegCircleUser className='me-lg-2'/>{usuarioLogueado.nombreUsuario}</NavLink>
                 <NavLink className="fs-4 nav-item nav-link"><IoNotifications/></NavLink>
+                <Button className="fs-4 nav-item nav-link" id='boton-nav'onClick={logout}>Cerrar Sesión</Button>
               </>
                 ) : <>
                 <NavLink end className='fs-4 nav-item nav-link' id='boton-nav' onClick={handleShow}>Iniciar Sesion</NavLink>
