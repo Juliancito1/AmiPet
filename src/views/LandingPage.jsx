@@ -3,12 +3,17 @@ import { MOCK_PUBLICACIONES, MOCK_PUBLICACIONES_2 } from '../helpers/ListaPublic
 import imgPrincipal from '../assets/Fondo-Principal.gif'
 import ListaAdopcion from './ListaAdopcion';
 import ListaMascotaPerdida from './ListaMascotaPerdida';
-const LandingPage = () => {
+import { useNavigate } from 'react-router-dom';
+const LandingPage = ({usuarioLogueado}) => {
+    const navegar = useNavigate()
     return (
         <section className="mainSection">
-            <section className='principal pt-3' style={{backgroundImage: `url(${imgPrincipal})`}}>
+        {
+              usuarioLogueado.id? (
+                <>
+                  <section className='principal pt-3' style={{backgroundImage: `url(${imgPrincipal})`}}>
                 <div className='textoprincipal'>
-                <h1 className='display-1 text-center mt-5'>Bienvenido Usuario</h1>
+                <h1 className='display-1 text-center mt-5'>Bienvenido {usuarioLogueado.nombreUsuario}</h1>
                 <p className='display-6 text-center'>En esta página podrá encontrar la sección de adopción de mascotas además de publicaciones sobre mascotas desaparecidas. Además puede realizar publicaciones si lo necesita</p>
                 </div>
             </section>
@@ -38,6 +43,12 @@ const LandingPage = () => {
                     </Row>
                 </section>
             </Container>
+                </>
+              ) : <>
+                  {navegar("/")}
+              </>
+            }
+            
         </section>
     );
 };
